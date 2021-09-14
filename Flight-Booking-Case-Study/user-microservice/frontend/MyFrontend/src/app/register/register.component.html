@@ -1,0 +1,45 @@
+
+
+<!-- <br><br>Email:<br><input type="text" [(ngModel)]='registerObj.email'   
+value="email" placeholder="Enter your email"><br><br>
+
+
+Password:<br><input type="password" [(ngModel)]='registerObj.pwd'
+ value="pwd" placeholder="Enter your password"><br><br>
+
+<button (click)='sendData()'>Register</button> 
+<br><br>
+-->
+ <!-- <div fxLayoutAlign="center center" fxFlexFill>  
+     <mat-card fxFlex="25">
+         <mat-toolbar >Registration</mat-toolbar>
+         <form fxLayoutAlign="stretch" fxLayout="column"  [formGroup]="loginForm">
+             <mat-form-field>
+                 <input matInput type="text" name="registerObj.email" #email="ngModel" [(ngModel)]='registerObj.email' placeholder="Enter Your Email">
+             </mat-form-field>
+
+             <mat-form-field>
+                <input matInput type="text" name="registerObj.pwd" #email="ngModel" [(ngModel)]='registerObj.pwd' placeholder="Enter Your Password">
+            </mat-form-field>
+            <button [disabled]="loginForm.invalid" mat-button type="button" (click)='sendData()' routerLink="/register" color="primary">Register</button>
+         </form>
+     </mat-card>
+ </div>-->
+
+ <div fxLayoutAlign="center center" >  
+    <mat-card fxFlex="25">
+        <mat-toolbar >Registration</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="RegisterForm" (ngSubmit)="submitData()">
+
+        <mat-form-field> 
+                <input  matInput type="email" formControlName="email" class="form-control" name="registerObj.email"  [(ngModel)]='registerObj.email' placeholder="Enter Your Email">
+        </mat-form-field>
+        <mat-form-field>
+               <input matInput type="password" formControlName="pwd" class="form-control" name="registerObj.pwd" [(ngModel)]='registerObj.pwd' placeholder="Enter Your Password">
+        </mat-form-field>
+           <button [disabled]="RegisterForm.invalid" mat-button type="button" (click)='sendData()' routerLink="/register" color="primary">Register</button>
+        </form>
+    </mat-card>
+</div>
+ 
+ 

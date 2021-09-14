@@ -1,0 +1,103 @@
+<html>
+<head></head>
+<body >
+  <div class="position">
+    <div class="modify">
+      <h2>Search Flights</h2> 
+    </div>
+    <br>
+  </div>
+  <b>Departure_Date:</b><input type="date" [(ngModel)]='departure' id="id" value="departure" placeholder="Enter your departure date">
+  <form>
+      
+    
+
+    <mat-form-field >
+      <mat-label><b>From:</b></mat-label>
+      <select matNativeControl [(ngModel)]='selectedvalue1' name="flight"> 
+        <option value="" selected></option>
+        <option *ngFor="let flight of flights" [value]="flight.value" >
+          {{flight.viewValue}}
+        </option>
+      </select>
+    </mat-form-field>
+    
+
+    <mat-form-field >
+      <mat-label><b>To:</b></mat-label>
+      <select matNativeControl [(ngModel)]='selectedvalue' name="flight"> 
+        <option value="" selected></option>
+        <option *ngFor="let flight of flights1" [value]="flight.value" >
+          {{flight.viewValue}}
+        </option>
+      </select>
+    </mat-form-field>
+
+    
+
+ 
+   
+  
+    <mat-form-field >
+      <mat-label><b>Type:</b></mat-label>
+      <select matNativeControl [(ngModel)]='selectedvalue2' name="flight"> 
+        <option value="" selected></option>
+        <option *ngFor="let flight of type11" [value]="flight.value" >
+          {{flight.viewValue}}
+        </option>
+      </select>
+    </mat-form-field>
+    <button (click)='getData()' >Search</button> 
+  
+  </form>
+   
+
+    <!-- <b>From:</b><input type="text" [(ngModel)]='starting' value="starting" id="id" placeholder="Enter your starting place"> -->
+    
+    <!-- <b>To:</b><input type="text" [(ngModel)]='ending' value="ending" id="id" placeholder="Enter your destination place"> -->
+    
+    <!-- <b>Departure_Date:</b><input type="date" [(ngModel)]='departure' id="id" value="departure" placeholder="Enter your departure date"> -->
+    <!-- <b>Return_Date:</b>(For Round Trip)<input type="text" [(ngModel)]='return1' value="return1" placeholder="Enter your return date">-->
+    
+    <!-- <b>Class_type:</b><input type="text" [(ngModel)]='type1' value="type" id="id" placeholder="Economic/Business"> -->
+    
+    
+
+    <br><br>
+  
+
+  <div class="position1" >
+
+    <table border="1">
+      <tr>
+        <th>Flight_Name</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Starting_Date</th>
+        <th>Return_Date</th>
+        <th>Price</th>
+        <th>Class</th>
+      </tr>
+      <tr *ngFor="let item of api.users">
+        <td>{{item.name}}</td>
+        <td>{{item.starting}}</td>
+        <td>{{item.ending}}</td>
+        <td>{{item.departure}}</td>
+        <td>{{item.return1}}</td>
+        <td>{{item.total}}</td>
+        <td>{{item.type1}}</td>
+        <button (click)="send()">Book</button>
+      </tr>
+    </table>
+    <!-- <b>Flight Name:</b>{{item.name}}<br> 
+    <b>Flight_Id:</b>{{item._id}} 
+    <b>From:</b>{{item.starting}}
+    <b>To:</b>{{item.ending}} 
+    <b>Starting_date:</b>{{item.departure}}
+    <b>Return_date:</b>{{item.return1}}
+    <b>Price:</b>{{item.total}} 
+    <b>Class:</b>{{item.type1}}
+    <button (click)="send()" style="color:white;">Book</button><br><br><br>-->
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<google-pay-button
+  environment="TEST"
+  buttontype="buy"
+  buttonColor="white"
+  [paymentRequest]="paymentRequest"
+  (loadpaymentdata)="onLoadPaymentData($event)"
+   
+>
+</google-pay-button>
+<router-outlet></router-outlet>
