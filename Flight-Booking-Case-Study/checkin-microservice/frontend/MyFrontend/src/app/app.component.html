@@ -1,0 +1,9 @@
+
+<div>
+<form [formGroup]="CheckInform">
+  <input  type="text" formControlName="num" class="form-control" name="registerObj.num"  [(ngModel)]='registerObj.num' placeholder="Enter Booking Id"> 
+  <button (click)="check()">CheckIn</button>
+
+</form>
+</div>
+<router-outlet></router-outlet>
